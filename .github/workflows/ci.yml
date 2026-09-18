@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  static:
+    name: Static documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # Current major verified against https://github.com/actions/checkout on 2026-09-18.
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      # No application manifest, dependencies, or install/build/test scripts exist yet.
+      # Add the stack's setup action and actual commands when its manifest is introduced.
+      - name: Report static-project scope
+        run: echo "Documentation-only project; no install, build, test, or lint commands are defined."

@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+# No application dependency ecosystem exists yet (static documentation only).
+# Add its ecosystem when the first application manifest is introduced.
