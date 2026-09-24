@@ -1,0 +1,705 @@
+{
+  "schema": 1,
+  "scope": "synthetic-foundation-only",
+  "startedAt": "2026-09-19T06:52:14.070Z",
+  "host": {
+    "node": "24.21.0",
+    "platform": "win32",
+    "osRelease": "10.0.19045",
+    "arch": "x64",
+    "cpu": "Intel(R) Core(TM) i7-8700 CPU @ 3.20GHz",
+    "logicalCpus": 12,
+    "ramBytes": 25718411264
+  },
+  "source": {
+    "commit": "b4a4fae012dc2656151f99493a87bc84e990f38b",
+    "workingTree": "May include uncommitted foundation changes; this is not a release benchmark."
+  },
+  "protocol": {
+    "attemptsPerGroup": 30,
+    "percentile": "nearest rank ceil(0.95 * 30) = 29",
+    "thresholdMs": 1000,
+    "failureSerialization": "Infinity is the JSON string \"Infinity\"; missing/unattempted values are null with status missing and count as Infinity.",
+    "cold": "New actual CLI subprocess per attempt: before spawn through parsed usable response and child close, including startup/storage loading/teardown.",
+    "warm": "Persistent actual MCP SDK client/server: before callTool through parsed usable response; handshake excluded. Server/storage remain loaded; no explicit result cache.",
+    "differences": "Cold CLI and warm MCP have different transport overhead. OS file caches are uncontrolled, not cleared. No provider call in retrieval. Queue/provider/persistence components are not separately instrumented.",
+    "workload": "One profile/Journey; two synthetic source datasets and 50 evidence/observation pairs. Zero direction options/experiments (within maxima); advice/experiment product performance is not measured.",
+    "resources": "Parent RSS and heapUsed after explicit GC and one event-loop turn; active libuv resource counts, not OS handle counts. Child peak RSS/OS handles unmeasured. Five new job/attempt/accounting records intentionally grow the store. No blanket memory-leak claim."
+  },
+  "cold": [
+    {
+      "attempt": 1,
+      "startedAt": "2026-09-19T06:52:14.831Z",
+      "endedAt": "2026-09-19T06:52:15.292Z",
+      "elapsedMs": 461.19640000000004,
+      "status": "usable"
+    },
+    {
+      "attempt": 2,
+      "startedAt": "2026-09-19T06:52:15.292Z",
+      "endedAt": "2026-09-19T06:52:15.722Z",
+      "elapsedMs": 429.8694999999998,
+      "status": "usable"
+    },
+    {
+      "attempt": 3,
+      "startedAt": "2026-09-19T06:52:15.722Z",
+      "endedAt": "2026-09-19T06:52:16.174Z",
+      "elapsedMs": 451.8307999999997,
+      "status": "usable"
+    },
+    {
+      "attempt": 4,
+      "startedAt": "2026-09-19T06:52:16.174Z",
+      "endedAt": "2026-09-19T06:52:16.638Z",
+      "elapsedMs": 463.56809999999996,
+      "status": "usable"
+    },
+    {
+      "attempt": 5,
+      "startedAt": "2026-09-19T06:52:16.638Z",
+      "endedAt": "2026-09-19T06:52:17.237Z",
+      "elapsedMs": 599.5697999999998,
+      "status": "usable"
+    },
+    {
+      "attempt": 6,
+      "startedAt": "2026-09-19T06:52:17.237Z",
+      "endedAt": "2026-09-19T06:52:17.726Z",
+      "elapsedMs": 489.11889999999994,
+      "status": "usable"
+    },
+    {
+      "attempt": 7,
+      "startedAt": "2026-09-19T06:52:17.726Z",
+      "endedAt": "2026-09-19T06:52:18.203Z",
+      "elapsedMs": 476.9113000000002,
+      "status": "usable"
+    },
+    {
+      "attempt": 8,
+      "startedAt": "2026-09-19T06:52:18.203Z",
+      "endedAt": "2026-09-19T06:52:18.652Z",
+      "elapsedMs": 448.6324000000004,
+      "status": "usable"
+    },
+    {
+      "attempt": 9,
+      "startedAt": "2026-09-19T06:52:18.652Z",
+      "endedAt": "2026-09-19T06:52:19.115Z",
+      "elapsedMs": 462.7979999999998,
+      "status": "usable"
+    },
+    {
+      "attempt": 10,
+      "startedAt": "2026-09-19T06:52:19.115Z",
+      "endedAt": "2026-09-19T06:52:19.559Z",
+      "elapsedMs": 444.60050000000047,
+      "status": "usable"
+    },
+    {
+      "attempt": 11,
+      "startedAt": "2026-09-19T06:52:19.559Z",
+      "endedAt": "2026-09-19T06:52:20.023Z",
+      "elapsedMs": 463.28249999999935,
+      "status": "usable"
+    },
+    {
+      "attempt": 12,
+      "startedAt": "2026-09-19T06:52:20.023Z",
+      "endedAt": "2026-09-19T06:52:20.452Z",
+      "elapsedMs": 429.0605999999998,
+      "status": "usable"
+    },
+    {
+      "attempt": 13,
+      "startedAt": "2026-09-19T06:52:20.452Z",
+      "endedAt": "2026-09-19T06:52:20.930Z",
+      "elapsedMs": 478.34829999999965,
+      "status": "usable"
+    },
+    {
+      "attempt": 14,
+      "startedAt": "2026-09-19T06:52:20.930Z",
+      "endedAt": "2026-09-19T06:52:21.497Z",
+      "elapsedMs": 566.4786999999997,
+      "status": "usable"
+    },
+    {
+      "attempt": 15,
+      "startedAt": "2026-09-19T06:52:21.497Z",
+      "endedAt": "2026-09-19T06:52:22.488Z",
+      "elapsedMs": 991.8558999999996,
+      "status": "usable"
+    },
+    {
+      "attempt": 16,
+      "startedAt": "2026-09-19T06:52:22.488Z",
+      "endedAt": "2026-09-19T06:52:23.288Z",
+      "elapsedMs": 799.7196999999996,
+      "status": "usable"
+    },
+    {
+      "attempt": 17,
+      "startedAt": "2026-09-19T06:52:23.288Z",
+      "endedAt": "2026-09-19T06:52:23.770Z",
+      "elapsedMs": 482.2353000000003,
+      "status": "usable"
+    },
+    {
+      "attempt": 18,
+      "startedAt": "2026-09-19T06:52:23.770Z",
+      "endedAt": "2026-09-19T06:52:24.217Z",
+      "elapsedMs": 446.6121999999996,
+      "status": "usable"
+    },
+    {
+      "attempt": 19,
+      "startedAt": "2026-09-19T06:52:24.217Z",
+      "endedAt": "2026-09-19T06:52:24.670Z",
+      "elapsedMs": 453.15500000000065,
+      "status": "usable"
+    },
+    {
+      "attempt": 20,
+      "startedAt": "2026-09-19T06:52:24.670Z",
+      "endedAt": "2026-09-19T06:52:25.091Z",
+      "elapsedMs": 421.1376999999993,
+      "status": "usable"
+    },
+    {
+      "attempt": 21,
+      "startedAt": "2026-09-19T06:52:25.091Z",
+      "endedAt": "2026-09-19T06:52:25.504Z",
+      "elapsedMs": 412.35529999999926,
+      "status": "usable"
+    },
+    {
+      "attempt": 22,
+      "startedAt": "2026-09-19T06:52:25.504Z",
+      "endedAt": "2026-09-19T06:52:25.935Z",
+      "elapsedMs": 430.79699999999866,
+      "status": "usable"
+    },
+    {
+      "attempt": 23,
+      "startedAt": "2026-09-19T06:52:25.935Z",
+      "endedAt": "2026-09-19T06:52:26.421Z",
+      "elapsedMs": 486.4482000000007,
+      "status": "usable"
+    },
+    {
+      "attempt": 24,
+      "startedAt": "2026-09-19T06:52:26.421Z",
+      "endedAt": "2026-09-19T06:52:26.863Z",
+      "elapsedMs": 442.35490000000027,
+      "status": "usable"
+    },
+    {
+      "attempt": 25,
+      "startedAt": "2026-09-19T06:52:26.863Z",
+      "endedAt": "2026-09-19T06:52:27.307Z",
+      "elapsedMs": 443.6993000000002,
+      "status": "usable"
+    },
+    {
+      "attempt": 26,
+      "startedAt": "2026-09-19T06:52:27.307Z",
+      "endedAt": "2026-09-19T06:52:27.769Z",
+      "elapsedMs": 462.20640000000094,
+      "status": "usable"
+    },
+    {
+      "attempt": 27,
+      "startedAt": "2026-09-19T06:52:27.769Z",
+      "endedAt": "2026-09-19T06:52:28.191Z",
+      "elapsedMs": 421.3127999999997,
+      "status": "usable"
+    },
+    {
+      "attempt": 28,
+      "startedAt": "2026-09-19T06:52:28.191Z",
+      "endedAt": "2026-09-19T06:52:28.641Z",
+      "elapsedMs": 450.66170000000056,
+      "status": "usable"
+    },
+    {
+      "attempt": 29,
+      "startedAt": "2026-09-19T06:52:28.641Z",
+      "endedAt": "2026-09-19T06:52:29.063Z",
+      "elapsedMs": 421.73299999999836,
+      "status": "usable"
+    },
+    {
+      "attempt": 30,
+      "startedAt": "2026-09-19T06:52:29.063Z",
+      "endedAt": "2026-09-19T06:52:29.503Z",
+      "elapsedMs": 439.5486000000001,
+      "status": "usable"
+    }
+  ],
+  "warm": [
+    {
+      "attempt": 1,
+      "startedAt": "2026-09-19T06:52:30.067Z",
+      "endedAt": "2026-09-19T06:52:30.093Z",
+      "elapsedMs": 25.47820000000138,
+      "status": "usable"
+    },
+    {
+      "attempt": 2,
+      "startedAt": "2026-09-19T06:52:30.093Z",
+      "endedAt": "2026-09-19T06:52:30.100Z",
+      "elapsedMs": 7.198599999999715,
+      "status": "usable"
+    },
+    {
+      "attempt": 3,
+      "startedAt": "2026-09-19T06:52:30.100Z",
+      "endedAt": "2026-09-19T06:52:30.106Z",
+      "elapsedMs": 5.533699999999953,
+      "status": "usable"
+    },
+    {
+      "attempt": 4,
+      "startedAt": "2026-09-19T06:52:30.106Z",
+      "endedAt": "2026-09-19T06:52:30.111Z",
+      "elapsedMs": 5.7040000000015425,
+      "status": "usable"
+    },
+    {
+      "attempt": 5,
+      "startedAt": "2026-09-19T06:52:30.111Z",
+      "endedAt": "2026-09-19T06:52:30.118Z",
+      "elapsedMs": 6.666899999996531,
+      "status": "usable"
+    },
+    {
+      "attempt": 6,
+      "startedAt": "2026-09-19T06:52:30.118Z",
+      "endedAt": "2026-09-19T06:52:30.123Z",
+      "elapsedMs": 5.025499999999738,
+      "status": "usable"
+    },
+    {
+      "attempt": 7,
+      "startedAt": "2026-09-19T06:52:30.123Z",
+      "endedAt": "2026-09-19T06:52:30.129Z",
+      "elapsedMs": 5.8641999999999825,
+      "status": "usable"
+    },
+    {
+      "attempt": 8,
+      "startedAt": "2026-09-19T06:52:30.129Z",
+      "endedAt": "2026-09-19T06:52:30.135Z",
+      "elapsedMs": 5.7479999999995925,
+      "status": "usable"
+    },
+    {
+      "attempt": 9,
+      "startedAt": "2026-09-19T06:52:30.135Z",
+      "endedAt": "2026-09-19T06:52:30.139Z",
+      "elapsedMs": 4.570100000000821,
+      "status": "usable"
+    },
+    {
+      "attempt": 10,
+      "startedAt": "2026-09-19T06:52:30.139Z",
+      "endedAt": "2026-09-19T06:52:30.144Z",
+      "elapsedMs": 4.956599999997707,
+      "status": "usable"
+    },
+    {
+      "attempt": 11,
+      "startedAt": "2026-09-19T06:52:30.144Z",
+      "endedAt": "2026-09-19T06:52:30.151Z",
+      "elapsedMs": 6.82839999999851,
+      "status": "usable"
+    },
+    {
+      "attempt": 12,
+      "startedAt": "2026-09-19T06:52:30.151Z",
+      "endedAt": "2026-09-19T06:52:30.155Z",
+      "elapsedMs": 3.8663999999989755,
+      "status": "usable"
+    },
+    {
+      "attempt": 13,
+      "startedAt": "2026-09-19T06:52:30.155Z",
+      "endedAt": "2026-09-19T06:52:30.159Z",
+      "elapsedMs": 3.7419000000008964,
+      "status": "usable"
+    },
+    {
+      "attempt": 14,
+      "startedAt": "2026-09-19T06:52:30.159Z",
+      "endedAt": "2026-09-19T06:52:30.164Z",
+      "elapsedMs": 5.557799999998679,
+      "status": "usable"
+    },
+    {
+      "attempt": 15,
+      "startedAt": "2026-09-19T06:52:30.164Z",
+      "endedAt": "2026-09-19T06:52:30.169Z",
+      "elapsedMs": 4.283800000001065,
+      "status": "usable"
+    },
+    {
+      "attempt": 16,
+      "startedAt": "2026-09-19T06:52:30.169Z",
+      "endedAt": "2026-09-19T06:52:30.173Z",
+      "elapsedMs": 3.868800000000192,
+      "status": "usable"
+    },
+    {
+      "attempt": 17,
+      "startedAt": "2026-09-19T06:52:30.173Z",
+      "endedAt": "2026-09-19T06:52:30.176Z",
+      "elapsedMs": 3.881999999997788,
+      "status": "usable"
+    },
+    {
+      "attempt": 18,
+      "startedAt": "2026-09-19T06:52:30.176Z",
+      "endedAt": "2026-09-19T06:52:30.181Z",
+      "elapsedMs": 5.0244000000020606,
+      "status": "usable"
+    },
+    {
+      "attempt": 19,
+      "startedAt": "2026-09-19T06:52:30.181Z",
+      "endedAt": "2026-09-19T06:52:30.186Z",
+      "elapsedMs": 4.8804999999993015,
+      "status": "usable"
+    },
+    {
+      "attempt": 20,
+      "startedAt": "2026-09-19T06:52:30.186Z",
+      "endedAt": "2026-09-19T06:52:30.190Z",
+      "elapsedMs": 3.878099999998085,
+      "status": "usable"
+    },
+    {
+      "attempt": 21,
+      "startedAt": "2026-09-19T06:52:30.190Z",
+      "endedAt": "2026-09-19T06:52:30.194Z",
+      "elapsedMs": 4.2937999999994645,
+      "status": "usable"
+    },
+    {
+      "attempt": 22,
+      "startedAt": "2026-09-19T06:52:30.195Z",
+      "endedAt": "2026-09-19T06:52:30.200Z",
+      "elapsedMs": 5.06329999999798,
+      "status": "usable"
+    },
+    {
+      "attempt": 23,
+      "startedAt": "2026-09-19T06:52:30.200Z",
+      "endedAt": "2026-09-19T06:52:30.204Z",
+      "elapsedMs": 4.074800000002142,
+      "status": "usable"
+    },
+    {
+      "attempt": 24,
+      "startedAt": "2026-09-19T06:52:30.204Z",
+      "endedAt": "2026-09-19T06:52:30.207Z",
+      "elapsedMs": 3.687000000001717,
+      "status": "usable"
+    },
+    {
+      "attempt": 25,
+      "startedAt": "2026-09-19T06:52:30.207Z",
+      "endedAt": "2026-09-19T06:52:30.212Z",
+      "elapsedMs": 4.546399999999267,
+      "status": "usable"
+    },
+    {
+      "attempt": 26,
+      "startedAt": "2026-09-19T06:52:30.212Z",
+      "endedAt": "2026-09-19T06:52:30.217Z",
+      "elapsedMs": 4.907100000000355,
+      "status": "usable"
+    },
+    {
+      "attempt": 27,
+      "startedAt": "2026-09-19T06:52:30.217Z",
+      "endedAt": "2026-09-19T06:52:30.221Z",
+      "elapsedMs": 3.757400000002235,
+      "status": "usable"
+    },
+    {
+      "attempt": 28,
+      "startedAt": "2026-09-19T06:52:30.221Z",
+      "endedAt": "2026-09-19T06:52:30.224Z",
+      "elapsedMs": 3.583200000000943,
+      "status": "usable"
+    },
+    {
+      "attempt": 29,
+      "startedAt": "2026-09-19T06:52:30.224Z",
+      "endedAt": "2026-09-19T06:52:30.229Z",
+      "elapsedMs": 4.574800000002142,
+      "status": "usable"
+    },
+    {
+      "attempt": 30,
+      "startedAt": "2026-09-19T06:52:30.229Z",
+      "endedAt": "2026-09-19T06:52:30.234Z",
+      "elapsedMs": 4.86620000000039,
+      "status": "usable"
+    }
+  ],
+  "cycles": [
+    {
+      "cycle": 1,
+      "elapsedMs": 2046.8521,
+      "status": "settled",
+      "state": "cancelled",
+      "providerRequests": 1,
+      "forcedKill": false,
+      "before": {
+        "rssBytes": 91230208,
+        "heapUsedBytes": 17579120,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "after": {
+        "rssBytes": 96120832,
+        "heapUsedBytes": 18127848,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "recordsBefore": {
+        "schemaVersion": 5,
+        "records": 102,
+        "versions": 152
+      },
+      "recordsAfter": {
+        "schemaVersion": 5,
+        "records": 103,
+        "versions": 158
+      },
+      "passed": true
+    },
+    {
+      "cycle": 2,
+      "elapsedMs": 2047.1998999999996,
+      "status": "settled",
+      "state": "cancelled",
+      "providerRequests": 1,
+      "forcedKill": false,
+      "before": {
+        "rssBytes": 96141312,
+        "heapUsedBytes": 18112104,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "after": {
+        "rssBytes": 98590720,
+        "heapUsedBytes": 18215248,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "recordsBefore": {
+        "schemaVersion": 5,
+        "records": 103,
+        "versions": 158
+      },
+      "recordsAfter": {
+        "schemaVersion": 5,
+        "records": 104,
+        "versions": 164
+      },
+      "passed": true
+    },
+    {
+      "cycle": 3,
+      "elapsedMs": 2047.6601999999984,
+      "status": "settled",
+      "state": "cancelled",
+      "providerRequests": 1,
+      "forcedKill": false,
+      "before": {
+        "rssBytes": 98660352,
+        "heapUsedBytes": 18206408,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "after": {
+        "rssBytes": 99987456,
+        "heapUsedBytes": 18248936,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "recordsBefore": {
+        "schemaVersion": 5,
+        "records": 104,
+        "versions": 164
+      },
+      "recordsAfter": {
+        "schemaVersion": 5,
+        "records": 105,
+        "versions": 170
+      },
+      "passed": true
+    },
+    {
+      "cycle": 4,
+      "elapsedMs": 2052.6687999999995,
+      "status": "settled",
+      "state": "cancelled",
+      "providerRequests": 1,
+      "forcedKill": false,
+      "before": {
+        "rssBytes": 99995648,
+        "heapUsedBytes": 18248296,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "after": {
+        "rssBytes": 99971072,
+        "heapUsedBytes": 18300232,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "recordsBefore": {
+        "schemaVersion": 5,
+        "records": 105,
+        "versions": 170
+      },
+      "recordsAfter": {
+        "schemaVersion": 5,
+        "records": 106,
+        "versions": 176
+      },
+      "passed": true
+    },
+    {
+      "cycle": 5,
+      "elapsedMs": 2052.204700000002,
+      "status": "settled",
+      "state": "cancelled",
+      "providerRequests": 1,
+      "forcedKill": false,
+      "before": {
+        "rssBytes": 100024320,
+        "heapUsedBytes": 18298424,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "after": {
+        "rssBytes": 103800832,
+        "heapUsedBytes": 18369600,
+        "activeResourceCount": 2,
+        "activeResources": {
+          "MessagePort": 1,
+          "PipeWrap": 1
+        }
+      },
+      "recordsBefore": {
+        "schemaVersion": 5,
+        "records": 106,
+        "versions": 176
+      },
+      "recordsAfter": {
+        "schemaVersion": 5,
+        "records": 107,
+        "versions": 182
+      },
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "database": {
+    "schemaVersion": 5,
+    "records": 102,
+    "versions": 152,
+    "mainBytes": 4096,
+    "walBytes": 3699792,
+    "boundary": "After population, writer open; before retrieval and resource jobs."
+  },
+  "retrievalVersionUnchanged": true,
+  "resourcesBefore": {
+    "rssBytes": 91062272,
+    "heapUsedBytes": 17584904,
+    "activeResourceCount": 2,
+    "activeResources": {
+      "MessagePort": 1,
+      "PipeWrap": 1
+    }
+  },
+  "resourcesAfter": {
+    "rssBytes": 103829504,
+    "heapUsedBytes": 18370808,
+    "activeResourceCount": 2,
+    "activeResources": {
+      "MessagePort": 1,
+      "PipeWrap": 1
+    }
+  },
+  "recovery": {
+    "backupMs": 67.41349999999875,
+    "restoreMs": 262.4380000000019,
+    "backupRestoreAndComparisonMs": 674.7700999999979,
+    "semanticTablesEqual": true,
+    "tableRowCounts": {
+      "blocked_receipts": 0,
+      "record_dependencies": 2906,
+      "record_identities": 107,
+      "record_versions": 182,
+      "removal_ledger": 0,
+      "removal_tombstones": 0,
+      "request_receipts": 57,
+      "workflow_attempts": 5,
+      "workflow_claim": 1,
+      "workflow_ledger": 15,
+      "workflow_receipts": 5,
+      "workflow_results": 0
+    },
+    "checksum": "3cf12a889e56ca941373fcbb8186e70d833f68a977f52956f49a9e5ea6b1b6fd",
+    "boundary": "SQLite backup API, restore to new test-owned location with removal ledger, re-export and exact semantic table comparison; no existing store overwritten."
+  },
+  "tempTeardown": true,
+  "coldSummary": {
+    "denominator": 30,
+    "failures": 0,
+    "p95Ms": 799.7196999999996,
+    "passed": true
+  },
+  "warmSummary": {
+    "denominator": 30,
+    "failures": 0,
+    "p95Ms": 7.198599999999715,
+    "passed": true
+  },
+  "finishedAt": "2026-09-19T06:52:41.512Z",
+  "passed": true
+}

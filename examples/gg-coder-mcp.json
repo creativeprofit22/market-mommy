@@ -1,0 +1,14 @@
+{
+  "name": "market-mommy-read-only-EXAMPLE-EDIT-BEFORE-USE",
+  "command": "/REPLACE_WITH_ABSOLUTE_PATH_TO_NODE_24_21_0/node",
+  "args": [
+    "/REPLACE_WITH_ABSOLUTE_PROJECT_PATH/dist/src/interfaces/mcp.js",
+    "--store",
+    "/REPLACE_WITH_ABSOLUTE_LOCAL_STORE_PATH/fixtures.sqlite",
+    "--capabilities",
+    "read"
+  ],
+  "enabled": false,
+  "shared": false,
+  "timeout": 30000
+}
