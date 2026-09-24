@@ -20,3 +20,14 @@ Desktop.ini
 
 # Local logs
 *.log
+
+# Generated application files and local stores
+node_modules/
+dist/
+coverage/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-wal
+*.db-shm
