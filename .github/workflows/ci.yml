@@ -14,17 +14,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  static:
-    name: Static documentation
-    runs-on: ubuntu-latest
+  foundation:
+    name: Foundation (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     timeout-minutes: 15
     steps:
-      # Current major verified against https://github.com/actions/checkout on 2026-09-18.
+      # Verified 2026-09-19 against GitHub API actions/checkout git/ref/tags/v7.
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      # No application manifest, dependencies, or install/build/test scripts exist yet.
-      # Add the stack's setup action and actual commands when its manifest is introduced.
-      - name: Report static-project scope
-        run: echo "Documentation-only project; no install, build, test, or lint commands are defined."
+      # Verified 2026-09-19: GitHub API /repos/actions/setup-node/git/ref/tags/v6
+      # returned this immutable commit (setup-node 6.5.0).
+      - name: Set up pinned Node
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24.21.0'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run check:boundaries
+      - run: npm run report:foundation
