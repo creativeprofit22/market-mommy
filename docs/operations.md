@@ -46,6 +46,19 @@ Removal conservatively redacts content transitively through dependencies and hid
 
 The bounded fixture runner is explicit trusted composition, never automatic on enqueue. Cancellation propagates to the owned framework child and fixture endpoint with finite teardown; normal success awaits child exit within the deadline before forced cleanup. `onProgress` readiness callbacks are trust-only observability, not model parameters. Fixture zero-cost settlement cannot establish a live monetary cap. No credential store or paid-provider adapter exists.
 
+## GG Coder host smoke test (manual, fixture-only)
+
+This re-verifies that a real GG Coder host can read, but not write, a synthetic fixture store. Host registration needs explicit user approval; see `examples/README.md` for trust and settings details. The host call is manual; only the preparation script and its test run in CI.
+
+1. **Prepare the store.** With pinned Node 24.21.0, run `npm run build`, then `node scripts/prepare-host-smoke.mjs --dir <absolute directory>`. It refuses to overwrite an existing `fixtures.sqlite` or `expected-resume.json`. It saves synthetic profile `HOST-P` and Journey `HOST-J`, writes the `resumeJourney` result to `expected-resume.json`, cross-checks it against the real read-only CLI, and prints the store's sha256 plus the exact `.gg/mcp.json` entry (absolute Node path, `mcp.js`, `--store`, `--capabilities read`).
+2. **Register.** Add the printed entry to the git-ignored project `.gg/mcp.json`. Trust only this project through the host's per-project `trustedProjects`; keep global project-MCP trust off. Back up host settings first. Never commit `.gg/`.
+3. **Restart** the host session so it loads the entry.
+4. **Read.** Through the host, call `resumeJourney` with `journeyId: "HOST-J"`. The returned envelope must deep-equal `expected-resume.json`.
+5. **Write is refused.** Call a write tool such as `saveProfile`. It must return error code `unauthorized`.
+6. **Store unchanged.** After the host session, the sha256 of `fixtures.sqlite` must equal the value the script printed.
+
+Record the date, host identity, commit and results in `docs/foundation-verification.md`. A passed run is evidence for that host and commit only.
+
 ## Future verification gates
 
 Before real use: security review and adversarial boundary tests; backup/restore and migration checks; provider/source rights and data-handling review; performance and budget measurement under the agreed workload; consented beginner usability/accessibility checks. Relevant security, durability, legal/privacy and performance specialists are required when later work enters that scope. Documentation does not certify any of these controls or authorize live costs.
