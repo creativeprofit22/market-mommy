@@ -16,7 +16,9 @@ Plan approval alone did not accept open choices. No application implementation, 
 
 The user approved the shared-core implementation plan and its ordered steps, including project-local installation of the six exact candidate packages after review. During step 1 the user separately authorized installing Node 24.21.0 side-by-side through the existing fnm manager without changing its default. That installation and the SQLite API probe succeeded. The selected runtime, exact package pins, archive/license/script findings and remaining redistribution notice gate are recorded in [foundation verification](foundation-verification.md#step-1--runtime-and-dependency-review-2026-09-19). This authorization does not permit live providers, real data, changes in other repositories, automatic MCP registration, commits or release. Earlier documentation-phase statements above remain historical.
 
-Steps 1–10 of the approved shared-core plan are implemented locally; step 11 reconciles documentation. This is implementation progress, **not phase Done**. Local fixture CLI/MCP protocol checks do not substitute for host integration or beginner delivery. Actual GG Coder registration permission was requested but the prompt was dismissed; no host settings changed and the host smoke test remains unverified. No commit/push or hosted CI run is claimed. Current evidence and remaining gates are in [foundation verification](foundation-verification.md).
+Steps 1–11 of the approved shared-core plan are implemented. Historical 2026-09-19 status (superseded): the phase was still in progress, host registration had been dismissed, and the host smoke test and hosted CI had not yet run.
+
+**Current status (2026-09-26):** the foundation phase is **Done for synthetic-fixture scope only**. With user authorization, GG Coder Local Fork gained a per-project trust entry for this project only; other projects' existing entries were left untouched and global `trustProjectMcpServers` stayed `false`. Its [host smoke test passed on 2026-09-26](foundation-verification.md#gg-coder-host-smoke-test-2026-09-26). Hosted CI run `36033459408` passed for `70bc885` on ubuntu-latest and windows-latest. Local protocol checks and this smoke test do not substitute for beginner delivery. Current evidence and remaining gates are in [foundation verification](foundation-verification.md).
 
 ## Accepted decisions
 
@@ -38,7 +40,7 @@ The complete journey, owned modules, proposed use cases/records, failure contrac
 | Status | Decision | Gate / next owner |
 | --- | --- | --- |
 | Selected for fixture foundation | Node 24.21.0, built-in SQLite, exact registry framework/SDK/schema/compiler pins | Manifest/lockfile and dependency review establish the choice; SQLite maturity and zstd wrapper/WASM missing-notice redistribution gate remain explicit |
-| Open | UI library, launcher packaging, host registration and release distribution | Separate permission for actual host registration; beginner setup, supported platforms and complete redistribution notices before delivery |
+| Open | UI library, launcher packaging, end-user host registration and release distribution | Developer-machine fixture registration was authorized and smoke-tested on 2026-09-26. Beginner-facing registration/setup, supported platforms and complete redistribution notices remain required before delivery |
 | Open | Model and collection providers; first permitted external sources; live price schedule | Product/security/legal review of actual sources and data handling, explicit key/cost authorization before live calls |
 | Open | Source-specific freshness periods and retention schedules | Define against selected source terms and decision use before enabling collection; unknown freshness is not “fresh” |
 | Open | Platform support and beginner setup procedure | Validate a packaged launcher on a named supported environment before beginner delivery |

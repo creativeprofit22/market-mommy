@@ -1,6 +1,19 @@
 # Local developer interfaces (fixture-only)
 
-`gg-coder-mcp.json` is **one MCPServerConfig example object**, not an installed host configuration. It is disabled and every path is deliberately nonfunctional until edited. On Windows use absolute drive paths (for example `E:/...`); on POSIX use absolute `/...` paths. Select the existing pinned Node 24.21.0 executable. Keep `shared: false`. No host registration has been performed or authorized by this example. Do not copy a real credential or inherited environment into it.
+`gg-coder-mcp.json` is **one MCPServerConfig example object**, not an installed host configuration. It is disabled and every path is deliberately nonfunctional until edited. On Windows use absolute drive paths (for example `E:/...`); on POSIX use absolute `/...` paths. Select the existing pinned Node 24.21.0 executable. Keep `shared: false`. This example file itself is inert: it never registers anything, and it was not used by the [2026-09-26 GG Coder host smoke test](../docs/foundation-verification.md#gg-coder-host-smoke-test-2026-09-26). Do not copy a real credential or inherited environment into it.
+
+## Registering with GG Coder (developer machine, explicit approval only)
+
+Only register with explicit user approval. GG Coder does not read this example file; it loads project MCP servers as follows:
+
+- **Project entry.** Define the server in the git-ignored project file `.gg/mcp.json` under the `mcpServers` key, e.g. entry `market-mommy-fixture-read-only` with `enabled: true`, `shared: false` and args `dist/src/interfaces/mcp.js --store <absolute fixture store> --capabilities read`.
+- **Project trust.** GG Coder skips project-scoped MCP servers unless the project path is listed in `trustedProjects` in the host settings. Trust only this project; never enable the global `trustProjectMcpServers` (keep it `false`).
+- **Correct settings file.** GG Coder Local Fork reads its per-identity settings file `~/.gg/identities/com.ggcoder.local-fork/settings.json`, not `~/.gg/settings.json`. The trusted path must match `path.resolve(cwd)` exactly (for example `E:\Projects\market-mommy`).
+- **Restart.** Changes take effect only after restarting the host session.
+
+Back up the settings file before editing it. Keep `--capabilities read` and a separate fixture store, not a store you care about. Never commit `.gg/`. To prepare that store and the exact entry, and for the full manual smoke-test steps, see [operations](../docs/operations.md#gg-coder-host-smoke-test-manual-fixture-only).
+
+## Invocation
 
 After `npm run build`, invoke with absolute executable, compiled script and local store paths, independently of cwd:
 
@@ -23,4 +36,4 @@ Both interfaces serialize dispatch through the **same `SqliteStorage.dispatch`**
 
 Local test seams: `createApplication({ storePath, capabilities })` in `dist/src/composition.js` returns only async `dispatch(json)` and `close()`. `createMcpServer(app)` and `callDomainTool(app, name, args)` in `dist/src/interfaces/mcp.js` use that facade. Compare persisted receipt replays or alternate adapters against the same store; there is no request-supplied clock/deadline override.
 
-Verification boundary: actual CLI subprocess and MCP SDK protocol tests pass for parity, hostile input, scope enforcement and lifecycle cleanup on Windows. See [current verification](../docs/foundation-verification.md) for evidence and remaining gates. No GG Coder host connection, live provider, beginner UI or Linux execution is claimed here.
+Verification boundary: actual CLI subprocess and MCP SDK protocol tests pass for parity, hostile input, scope enforcement and lifecycle cleanup on Windows. See [current verification](../docs/foundation-verification.md) for evidence and remaining gates. A real GG Coder host connection passed a read-only fixture smoke test on 2026-09-26, and hosted CI passed on Linux and Windows (see verification). This example file stays inert. No live provider, beginner UI or local Linux run is claimed here.

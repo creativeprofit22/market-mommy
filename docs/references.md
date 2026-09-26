@@ -8,7 +8,7 @@ The approved foundation selects Node 24.21.0 with built-in `node:sqlite`; exact 
 
 `standardwebhooks`' library notice was located at its reported gitHead. `@bokuweb/zstd-wasm@0.0.27` still lacks complete wrapper/WASM notices/provenance: its declared MIT metadata permits no claim that redistribution review is complete. Resolve that gate before redistribution. No reference inventory row becomes adopted merely because a related pattern was inspected; no Rust, DBOS, graph/vector service or scraping vendor was added.
 
-CI now pins `actions/checkout` at `3d3c42e5aac5ba805825da76410c181273ba90b1` and `actions/setup-node` at `249970729cb0ef3589644e2896645e5dc5ba9c38`; parent verification checked their GitHub refs on 2026-09-19. This is ref provenance, not a hosted CI result or Linux execution evidence.
+CI now pins `actions/checkout` at `3d3c42e5aac5ba805825da76410c181273ba90b1` and `actions/setup-node` at `249970729cb0ef3589644e2896645e5dc5ba9c38`; parent verification checked their GitHub refs on 2026-09-19. This line records ref provenance only. For the hosted CI result (run `36033459408`, ubuntu and windows), see [foundation verification](foundation-verification.md).
 
 ## Method, dates and reuse limits
 

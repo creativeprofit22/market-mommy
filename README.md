@@ -53,7 +53,9 @@ CLI consumes one bounded JSON document and emits one shared result envelope, wit
 /absolute/node-24.21.0/bin/node /absolute/market-mommy/dist/src/interfaces/mcp.js --store /absolute/fixtures.sqlite --capabilities read
 ```
 
-[examples/gg-coder-mcp.json](examples/gg-coder-mcp.json) is an **inert, disabled configuration object**, not an installed server. Replace all paths with absolute paths only after explicit host-registration approval; retain `shared: false`. Prefer the direct Node/script launch for STDIO, not npm diagnostics. Never copy credentials or inherited environment into configuration. No automatic registration occurs. Actual registration permission was asked but dismissed: no settings changed and GG Coder host smoke testing remains unverified. Local MCP SDK protocol tests are not an actual-host result.
+[examples/gg-coder-mcp.json](examples/gg-coder-mcp.json) is an **inert, disabled configuration object**, not an installed server. Replace all paths with absolute paths only after explicit host-registration approval; retain `shared: false`. Prefer the direct Node/script launch for STDIO, not npm diagnostics. Never copy credentials or inherited environment into configuration. No automatic registration occurs. An authorized developer-machine registration passed a [read-only host smoke test](docs/foundation-verification.md#gg-coder-host-smoke-test-2026-09-26); local MCP SDK protocol tests alone are not an actual-host result.
+
+To register on a developer machine (explicit approval only), see [Registering with GG Coder](examples/README.md#registering-with-gg-coder-developer-machine-explicit-approval-only).
 
 MCP exposes the same strict command actions without `action` in tool arguments; startup store/grants cannot be changed by a tool. No shell, generic SQL, unrestricted filesystem, provider destination, credential or administrative tool exists. `collectEvidence`, `recommendDirections` and `prepareOffer` fail with typed unavailable/policy-denied results rather than inventing advice.
 
