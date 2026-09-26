@@ -40,6 +40,7 @@ The complete journey, owned modules, proposed use cases/records, failure contrac
 | Status | Decision | Gate / next owner |
 | --- | --- | --- |
 | Selected for fixture foundation | Node 24.21.0, built-in SQLite, exact registry framework/SDK/schema/compiler pins | Manifest/lockfile and dependency review establish the choice; SQLite maturity and zstd wrapper/WASM missing-notice redistribution gate remain explicit |
+| Prototype only | Guided UI prototype built with plain HTML, CSS and browser TypeScript compiled by the pinned `tsc`, served by a loopback-only Node script; no UI framework or new dependency (approved guided-UI plan, 2026-09-26) | Applies only to the labeled-fixture prototype in `ui/prototype/`; it does not choose the production UI library. See [DESIGN.md](../DESIGN.md) |
 | Open | UI library, launcher packaging, end-user host registration and release distribution | Developer-machine fixture registration was authorized and smoke-tested on 2026-09-26. Beginner-facing registration/setup, supported platforms and complete redistribution notices remain required before delivery |
 | Open | Model and collection providers; first permitted external sources; live price schedule | Product/security/legal review of actual sources and data handling, explicit key/cost authorization before live calls |
 | Open | Source-specific freshness periods and retention schedules | Define against selected source terms and decision use before enabling collection; unknown freshness is not “fresh” |

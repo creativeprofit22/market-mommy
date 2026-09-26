@@ -13,6 +13,8 @@ Ownership below is a maintenance responsibility, not a claim that a team or name
 | [Contracts](contracts.md) | Implemented fixture API versus preserved product records/use cases, invariants, failures and manual Journey traces | Application-contract maintainer |
 | [Decisions](decisions.md) | Accepted/proposed/open/later status and approval provenance | Product maintainer |
 | [UX and copy](ux-copy.md) | Plain-language journey and recovery states, progressive evidence; not a visual design | Experience maintainer |
+| [Design reference](../DESIGN.md) with [journey](ux/journey.md), [tokens and primitives](ux/tokens-and-primitives.md), [states and accessibility](ux/states-and-accessibility.md) | Visual thesis, typography, tokens, primitives, icons, screen flow and accessibility requirements for the guided UI; copy stays in UX and copy | Experience maintainer |
+| [UI verification](ui-verification.md) | Dated toolkit/browser/ImageMagick readiness, rendered screenshots, drift and accessibility evidence and gaps for the guided UI prototype | Experience maintainer |
 | [Evidence policy](evidence-policy.md) | Provenance, independence, freshness, source permission and correction rules | Evidence maintainer |
 | [Operations](operations.md) | Required budget/cancellation, credentials, restart/backup/retention and local limits | Operations maintainer |
 | [Evaluation](evaluation.md) | Sole numerical workload/threshold owner, rubrics, denominators, fixture measurements and remaining evaluation | Evaluation maintainer |
