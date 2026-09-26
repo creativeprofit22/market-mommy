@@ -7,9 +7,11 @@
   "scripts": {
     "build": "node scripts/check-runtime.mjs && tsc",
     "typecheck": "node scripts/check-runtime.mjs && tsc --noEmit",
-    "test": "npm run build && node --test dist/tests/**/*.test.js",
+    "test": "npm run build && npm run build:ui && node --test dist/tests/**/*.test.js",
     "check:boundaries": "node scripts/check-boundaries.mjs",
     "report:foundation": "npm run build && node --expose-gc scripts/measure-foundation.mjs",
+    "build:ui": "node scripts/check-runtime.mjs && tsc -p ui/tsconfig.json",
+    "ui:prototype": "npm run build:ui && node scripts/serve-ui-prototype.mjs",
     "cli": "node scripts/launch-interface.mjs cli",
     "mcp": "node scripts/launch-interface.mjs mcp"
   },
